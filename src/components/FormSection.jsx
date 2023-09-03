@@ -1,22 +1,20 @@
 import "../styles/FormSection.css";
+import Forms from "./Forms.jsx";
 
 function FormSection() {
+  const personalInformation = [
+    "Personal Information",
+    { firstInput: "First name", htmlFor: "fname", type: "text" },
+    { secondInput: "Last name", htmlFor: "lname", type: "text" },
+    { thirdInput: "E-mail", htmlFor: "email", type: "email" },
+    { fourthInput: "Phone", htmlFor: "phone", type: "number" },
+  ];
   return (
     <div className="form-section">
       <div className="introduction"></div>
       <div className="forms">
-        <form>
-          <fieldset>
-            <legend>Personal Information</legend>
-            <label htmlFor="fname">First name:</label>
-            <br />
-            <input type="text" id="fname" name="fname" />
-            <br />
-            <label htmlFor="lname">Last name:</label>
-            <br />
-            <input type="text" id="lname" name="lname" />
-          </fieldset>
-        </form>
+        <Forms personalInformation={personalInformation} />
+        <Forms personalInformation={personalInformation} />
       </div>
     </div>
   );
