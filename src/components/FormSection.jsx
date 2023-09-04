@@ -1,6 +1,7 @@
 import "../styles/FormSection.css";
-import Forms from "./Forms";
+import Forms from "./forms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
+import { Experience } from "./form_types/Experience";
 
 function FormSection() {
   return (
@@ -11,7 +12,7 @@ function FormSection() {
           personalInformation={PersonalInformation}
           legend="Personal Information"
         />
-        <Forms personalInformation={PersonalInformation} legend="Experience" />
+        <Forms personalInformation={Experience} legend="Experience" />
       </div>
     </div>
   );

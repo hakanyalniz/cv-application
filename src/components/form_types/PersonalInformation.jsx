@@ -5,7 +5,7 @@ export const PersonalInformation = [
     <input type="text" id="fname" name="fname" />
   </div>,
   <div>
-    <label htmlFor="fname">Last name</label>
+    <label htmlFor="lname">Last name</label>
     <br />
     <input type="text" id="lname" name="lname" />
   </div>,
@@ -15,7 +15,7 @@ export const PersonalInformation = [
     <input type="email" id="email" name="email" />
   </div>,
   <div>
-    <label htmlFor="fname">Phone Number</label>
+    <label htmlFor="phone">Phone Number</label>
     <br />
     <input type="number" id="phone" name="phone" />
   </div>,
