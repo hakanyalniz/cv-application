@@ -1,22 +1,17 @@
 import "../styles/FormSection.css";
-import Forms from "./Forms.jsx";
+import Forms from "./Forms";
+import { PersonalInformation } from "./form_types/PersonalInformation";
 
 function FormSection() {
-  const personalInformation = [
-    { labelContent: "First name", htmlFor: "fname", type: "text" },
-    { labelContent: "Last name", htmlFor: "lname", type: "text" },
-    { labelContent: "E-mail", htmlFor: "email", type: "email" },
-    { labelContent: "Phone", htmlFor: "phone", type: "number" },
-  ];
   return (
     <div className="form-section">
       <div className="introduction"></div>
       <div className="forms">
         <Forms
-          personalInformation={personalInformation}
+          personalInformation={PersonalInformation}
           legend="Personal Information"
         />
-        <Forms personalInformation={personalInformation} legend="Experience" />
+        <Forms personalInformation={PersonalInformation} legend="Experience" />
       </div>
     </div>
   );
