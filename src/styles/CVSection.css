@@ -1,4 +1,15 @@
 .CV-section {
-  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1.5;
   background-color: rgb(153, 153, 153);
+  overflow: hidden;
+}
+
+.CV-section .CVPage {
+  height: 842px;
+  width: 595px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }

@@ -12,7 +12,7 @@ export const Experience = [
   <div>
     <label htmlFor="date">Date</label>
     <br />
-    <input type="text" id="date" name="date" />
+    <input type="date" id="date" name="date" />
   </div>,
   <div>
     <label htmlFor="achievements">Achievements</label>

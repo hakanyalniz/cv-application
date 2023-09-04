@@ -2,8 +2,13 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  padding-top: 1rem;
 }
 
 /* font-size: rem
@@ -13,6 +18,10 @@ padding/margin: rem or em, kevin often uses em for padding of buttons
 media queries: em
 
 px only for little things like shadows, borders etc. */
+
+.form-section .introduction {
+  max-width: 500px;
+}
 
 .form-section .forms {
   width: 60%;
@@ -24,10 +33,16 @@ px only for little things like shadows, borders etc. */
 }
 
 .form-section .forms fieldset {
+  min-width: 200px;
   padding: 10px;
 }
 
 .form-section .forms legend {
   font-size: 0.8rem;
   padding: 0 5px;
+}
+
+hr {
+  width: 60%;
+  margin: 30px 0;
 }
