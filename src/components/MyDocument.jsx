@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 // Create Document Component
 export const MyDocument = () => (
   <Document>
-    <Page style={styles.body}>
+    <Page style={styles.body} size="A4">
       <Text style={styles.header} fixed>
         ~ Created with react-pdf ~
       </Text>
