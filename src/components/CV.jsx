@@ -1,3 +1,5 @@
+import "../styles/CV.css";
+
 function CV() {
   return (
     <div id="jspdf" className="CVPage">

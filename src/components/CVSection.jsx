@@ -1,7 +1,7 @@
 import "../styles/CVSection.css";
 import Html from "./Html";
-import { PDFViewer } from "@react-pdf/renderer";
-import { MyDocument } from "./MyDocument";
+// import { PDFViewer } from "@react-pdf/renderer";
+// import { MyDocument } from "./MyDocument";
 
 function CVSection() {
   return (
@@ -16,7 +16,6 @@ function CVSection() {
         >
           <MyDocument />
         </PDFViewer> */}
-        {/* <div className="CVPage"></div> */}
       </div>
     </div>
   );

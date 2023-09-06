@@ -9,13 +9,14 @@ export default function Html() {
       <button
         onClick={() => {
           const check = document.getElementById("jspdf");
-          html2canvas(check, {}).then((canvas) => {
-            const imgData = canvas.toDataURL("image/png");
+          html2canvas(check, {
+            scale: 2,
+          }).then((canvas) => {
+            const imgData = canvas.toDataURL("image/png", 1.0);
+
             const height = (canvas.height * 210) / canvas.width;
 
             const pdf = new jspdf("p", "mm", "a4");
-            pdf.setFont("courier", "normal");
-            pdf.text("This is the default font.", 20, 20);
 
             pdf.addImage(imgData, "PNG", 0, 0, 210, height);
             pdf.save("export.pdf");
