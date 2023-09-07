@@ -2,10 +2,10 @@ import html2canvas from "html2canvas";
 import jspdf from "jspdf";
 import CV from "./CV";
 
-export default function Html() {
+export default function Html({ firstName }) {
   return (
     <>
-      <CV />
+      <CV firstName={firstName} />
       <button
         onClick={() => {
           const check = document.getElementById("jspdf");

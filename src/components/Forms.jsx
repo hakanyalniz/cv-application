@@ -1,9 +1,9 @@
-function Forms({ personalInformation, legend }) {
+function Forms({ formType, legend }) {
   return (
     <form>
       <fieldset>
         <legend>{legend}</legend>
-        {personalInformation.map((inputElement) => {
+        {formType.map((inputElement) => {
           return inputElement;
         })}
       </fieldset>

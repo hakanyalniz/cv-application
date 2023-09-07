@@ -3,11 +3,11 @@ import Html from "./Html";
 // import { PDFViewer } from "@react-pdf/renderer";
 // import { MyDocument } from "./MyDocument";
 
-function CVSection() {
+function CVSection({ firstName }) {
   return (
     <div className="CV-section">
       <div className="CV-wrapper">
-        <Html />
+        <Html firstName={firstName} />
 
         {/* <PDFViewer
           // style={{ width: 650, height: 842 }}

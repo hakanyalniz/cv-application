@@ -1,11 +1,11 @@
 import "../styles/CV.css";
 
-function CV() {
+function CV({ firstName }) {
   return (
     <div id="jspdf" className="CVPage">
       <div className="left-navbar">
         <div className="name-title">
-          <div className="fullName">Example Example Example</div>
+          <div className="fullName">{firstName}</div>
         </div>
         <div className="personal-information padding-within-elements">
           <div className="title border-bar">Personal Info</div>
