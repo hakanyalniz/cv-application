@@ -1,4 +1,87 @@
+:root {
+  --navbar-back: rgb(105, 103, 129);
+  --navbar-titles: rgb(68, 65, 97);
+}
+
 .CVPage {
-  padding: 10px;
+  display: flex;
   font-size: 14px;
+}
+
+.CVPage .left-navbar {
+  flex-grow: 1;
+  background-color: var(--navbar-back);
+  color: white;
+  padding: 10px;
+  min-width: 180px;
+}
+
+.left-navbar .border-bar {
+  background-color: var(--navbar-titles);
+  font-size: 16px;
+  /* -10px allows it to touch the borders despite the padding 10 of parent container */
+  margin: 5px -10px;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.left-navbar .name-title {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.personal-information,
+.skills,
+.languages {
+  font-size: 12px;
+}
+.padding-within-elements > * {
+  padding: 5px 0;
+}
+
+.left-navbar .sub-title {
+  font-weight: 500;
+}
+
+.skill-bar-1,
+.skill-bar-2,
+.skill-bar-3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  height: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* These will be later on filled with javascript */
+.skills .skill-bar-1 .bar-1 {
+  background-color: white;
+}
+
+.skills .skill-bar-2 .bar-1,
+.skills .skill-bar-2 .bar-2,
+.skills .skill-bar-2 .bar-3 {
+  background-color: white;
+}
+
+.skills .skill-bar-3 .bar-1,
+.skills .skill-bar-3 .bar-2,
+.skills .skill-bar-3 .bar-3,
+.skills .skill-bar-3 .bar-4 {
+  background-color: white;
+}
+
+.languages .skill-bar-1 .bar-1 {
+  background-color: white;
+}
+
+.languages .skill-bar-2 .bar-1,
+.languages .skill-bar-2 .bar-2,
+.languages .skill-bar-2 .bar-3 {
+  background-color: white;
+}
+
+.CVPage .main-body {
+  flex-grow: 1.5;
 }

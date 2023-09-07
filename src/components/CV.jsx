@@ -5,23 +5,61 @@ function CV() {
     <div id="jspdf" className="CVPage">
       <div className="left-navbar">
         <div className="name-title">
-          <div className="fullName">Example Example</div>
+          <div className="fullName">Example Example Example</div>
         </div>
-        <div className="personal-information">
-          <div className="title">Personal Info</div>
-          <div className="email">example@live.com</div>
-          <div className="phone">123 123 123</div>
+        <div className="personal-information padding-within-elements">
+          <div className="title border-bar">Personal Info</div>
+          <div className="email">
+            <div className="sub-title">E-Mail</div>
+            example@live.com
+          </div>
+          <div className="phone">
+            <div className="sub-title">Phone</div>
+            123 123 123
+          </div>
         </div>
-        <div className="skills">
-          <div className="title">Skills</div>
+        <div className="skills padding-within-elements">
+          <div className="title border-bar">Skills</div>
           <div>Skill 1</div>
+          <div className="skill-bar-1">
+            <span className="bar-1"></span>
+            <span className="bar-2"></span>
+            <span className="bar-3"></span>
+            <span className="bar-4"></span>
+          </div>
+
           <div>Skill 2</div>
+          <div className="skill-bar-2">
+            <span className="bar-1"></span>
+            <span className="bar-2"></span>
+            <span className="bar-3"></span>
+            <span className="bar-4"></span>
+          </div>
+
           <div>Skill 3</div>
+          <div className="skill-bar-3">
+            <span className="bar-1"></span>
+            <span className="bar-2"></span>
+            <span className="bar-3"></span>
+            <span className="bar-4"></span>
+          </div>
         </div>
-        <div className="languages">
-          <div className="title">Languages</div>
+        <div className="languages padding-within-elements">
+          <div className="title border-bar">Languages</div>
           <div>Language 1</div>
+          <div className="skill-bar-1">
+            <span className="bar-1"></span>
+            <span className="bar-2"></span>
+            <span className="bar-3"></span>
+            <span className="bar-4"></span>
+          </div>
           <div>Language 2</div>
+          <div className="skill-bar-2">
+            <span className="bar-1"></span>
+            <span className="bar-2"></span>
+            <span className="bar-3"></span>
+            <span className="bar-4"></span>
+          </div>
         </div>
       </div>
       <div className="main-body">
