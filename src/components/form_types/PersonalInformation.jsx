@@ -1,34 +1,48 @@
-export function PersonalInformation(handleFirstNameChange) {
+export function PersonalInformation(handleChange) {
   const PersonalInformation = [
     <div>
-      <label htmlFor="fname">First name</label>
+      <label htmlFor="firstName">First name</label>
       <br />
       <input
         type="text"
-        id="fname"
-        name="fname"
-        onChange={handleFirstNameChange}
+        id="firstName"
+        name="firstName"
+        onChange={handleChange}
       />
     </div>,
     <div>
-      <label htmlFor="lname">Last name</label>
+      <label htmlFor="lastName">Last name</label>
       <br />
-      <input type="text" id="lname" name="lname" />
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        onChange={handleChange}
+      />
     </div>,
     <div>
       <label htmlFor="email">E-mail</label>
       <br />
-      <input type="email" id="email" name="email" />
+      <input type="email" id="email" name="email" onChange={handleChange} />
     </div>,
     <div>
-      <label htmlFor="phone">Phone Number</label>
+      <label htmlFor="phoneNumber">Phone Number</label>
       <br />
-      <input type="number" id="phone" name="phone" />
+      <input
+        type="number"
+        id="phoneNumber"
+        name="phoneNumber"
+        onChange={handleChange}
+      />
     </div>,
     <div>
-      <label htmlFor="introduction">Introduction</label>
+      <label htmlFor="cvIntroduction">Introduction</label>
       <br />
-      <textarea id="introduction" name="introduction"></textarea>
+      <textarea
+        id="introduction"
+        name="cvIntroduction"
+        onChange={handleChange}
+      ></textarea>
     </div>,
   ];
 

@@ -1,22 +1,45 @@
-export const Education = [
-  <div>
-    <label htmlFor="school">Place of education</label>
-    <br />
-    <input type="text" id="school" name="school" />
-  </div>,
-  <div>
-    <label htmlFor="date">Date</label>
-    <br />
-    <input type="date" id="date" name="date" />
-  </div>,
-  <div>
-    <label htmlFor="field">Field</label>
-    <br />
-    <input type="text" id="field" name="field" />
-  </div>,
-  <div>
-    <label htmlFor="keyExperience">Key experiences</label>
-    <br />
-    <input type="text" id="keyExperience" name="keyExperience" />
-  </div>,
-];
+export function Education(handleChange) {
+  const Education = [
+    <div>
+      <label htmlFor="educationField">Field</label>
+      <br />
+      <input
+        type="text"
+        id="educationField"
+        name="educationField"
+        onChange={handleChange}
+      />
+    </div>,
+    <div>
+      <label htmlFor="placeOfEducation">Place of education</label>
+      <br />
+      <input
+        type="text"
+        id="placeOfEducation"
+        name="placeOfEducation"
+        onChange={handleChange}
+      />
+    </div>,
+    <div>
+      <label htmlFor="educationDate">Date</label>
+      <br />
+      <input
+        type="date"
+        id="educationDate"
+        name="educationDate"
+        onChange={handleChange}
+      />
+    </div>,
+    <div>
+      <label htmlFor="educationExperience">Key experiences</label>
+      <br />
+      <textarea
+        id="educationExperience"
+        name="educationExperience"
+        onChange={handleChange}
+      ></textarea>
+    </div>,
+  ];
+
+  return Education;
+}

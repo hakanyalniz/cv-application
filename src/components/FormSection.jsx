@@ -4,7 +4,7 @@ import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
 
-function FormSection({ handleFirstNameChange }) {
+function FormSection({ handleChange }) {
   return (
     <div className="form-section">
       <div className="introduction">
@@ -16,11 +16,11 @@ function FormSection({ handleFirstNameChange }) {
       <hr />
       <div className="forms">
         <Forms
-          formType={PersonalInformation(handleFirstNameChange)}
+          formType={PersonalInformation(handleChange)}
           legend="Personal Information"
         />
-        <Forms formType={Experience} legend="Experience" />
-        <Forms formType={Education} legend="Education" />
+        <Forms formType={Experience(handleChange)} legend="Experience" />
+        <Forms formType={Education(handleChange)} legend="Education" />
       </div>
     </div>
   );
