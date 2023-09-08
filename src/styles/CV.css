@@ -84,4 +84,38 @@
 
 .CVPage .main-body {
   flex-grow: 1.5;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.CVPage .main-body .sub-title {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 500;
+
+  border-top: 1px solid var(--navbar-titles);
+  border-bottom: 1px solid var(--navbar-titles);
+}
+
+.CVPage .main-body .experience-grid,
+.CVPage .main-body .education-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.CVPage .main-body .experience-details,
+.CVPage .main-body .education-details {
+  grid-column: 2 / 6;
+}
+
+.CVPage .main-body .experience-details .title,
+.CVPage .main-body .education-details .title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.CVPage .main-body .title-location {
+  font-style: italic;
 }
