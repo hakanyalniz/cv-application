@@ -59,27 +59,34 @@
   background-color: white;
 }
 
-.skills .skill-bar-2 .bar-1,
-.skills .skill-bar-2 .bar-2,
-.skills .skill-bar-2 .bar-3 {
-  background-color: white;
+.skills .skill-bar-1.bar-level-1 .bar-1 {
+  grid-column: 1 / 2;
 }
-
-.skills .skill-bar-3 .bar-1,
-.skills .skill-bar-3 .bar-2,
-.skills .skill-bar-3 .bar-3,
-.skills .skill-bar-3 .bar-4 {
-  background-color: white;
+.skills .skill-bar-1.bar-level-2 .bar-1 {
+  grid-column: 1 / 3;
+}
+.skills .skill-bar-1.bar-level-3 .bar-1 {
+  grid-column: 1 / 4;
+}
+.skills .skill-bar-1.bar-level-4 .bar-1 {
+  grid-column: 1 / 5;
 }
 
 .languages .skill-bar-1 .bar-1 {
   background-color: white;
 }
 
-.languages .skill-bar-2 .bar-1,
-.languages .skill-bar-2 .bar-2,
-.languages .skill-bar-2 .bar-3 {
-  background-color: white;
+.languages .skill-bar-1.bar-level-1 .bar-1 {
+  grid-column: 1 / 2;
+}
+.languages .skill-bar-1.bar-level-2 .bar-1 {
+  grid-column: 1 / 3;
+}
+.languages .skill-bar-1.bar-level-3 .bar-1 {
+  grid-column: 1 / 4;
+}
+.languages .skill-bar-1.bar-level-4 .bar-1 {
+  grid-column: 1 / 5;
 }
 
 .CVPage .main-body {

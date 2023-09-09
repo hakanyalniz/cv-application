@@ -41,6 +41,8 @@ export function PersonalInformation(handleChange) {
       <textarea
         id="introduction"
         name="cvIntroduction"
+        rows="4"
+        cols="55"
         onChange={handleChange}
       ></textarea>
     </div>,

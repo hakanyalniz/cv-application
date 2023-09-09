@@ -3,6 +3,7 @@ import Forms from "./forms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
+import { skillAndLanguage } from "./form_types/skillAndLanguage";
 
 function FormSection({ handleChange }) {
   return (
@@ -18,6 +19,10 @@ function FormSection({ handleChange }) {
         <Forms
           formType={PersonalInformation(handleChange)}
           legend="Personal Information"
+        />
+        <Forms
+          formType={skillAndLanguage(handleChange)}
+          legend="Skill and Language"
         />
         <Forms formType={Experience(handleChange)} legend="Experience" />
         <Forms formType={Education(handleChange)} legend="Education" />

@@ -2,7 +2,7 @@ import "../styles/CV.css";
 
 function CV({ formState }) {
   return (
-    <div id="jspdf" className="CVPage">
+    <div id="CVCanvas" className="CVPage">
       <div className="left-navbar">
         <div className="name-title">
           <div className="fullName">
@@ -22,45 +22,20 @@ function CV({ formState }) {
         </div>
         <div className="skills padding-within-elements">
           <div className="title border-bar">Skills</div>
-          <div>Skill 1</div>
-          <div className="skill-bar-1">
+          <div>{formState.skill.skillName}</div>
+          <div
+            className={`skill-bar-1 bar-level-${formState.skill.skillLevel}`}
+          >
             <span className="bar-1"></span>
-            <span className="bar-2"></span>
-            <span className="bar-3"></span>
-            <span className="bar-4"></span>
-          </div>
-
-          <div>Skill 2</div>
-          <div className="skill-bar-2">
-            <span className="bar-1"></span>
-            <span className="bar-2"></span>
-            <span className="bar-3"></span>
-            <span className="bar-4"></span>
-          </div>
-
-          <div>Skill 3</div>
-          <div className="skill-bar-3">
-            <span className="bar-1"></span>
-            <span className="bar-2"></span>
-            <span className="bar-3"></span>
-            <span className="bar-4"></span>
           </div>
         </div>
         <div className="languages padding-within-elements">
           <div className="title border-bar">Languages</div>
-          <div>Language 1</div>
-          <div className="skill-bar-1">
+          <div>{formState.language.languageName}</div>
+          <div
+            className={`skill-bar-1 bar-level-${formState.language.languageLevel}`}
+          >
             <span className="bar-1"></span>
-            <span className="bar-2"></span>
-            <span className="bar-3"></span>
-            <span className="bar-4"></span>
-          </div>
-          <div>Language 2</div>
-          <div className="skill-bar-2">
-            <span className="bar-1"></span>
-            <span className="bar-2"></span>
-            <span className="bar-3"></span>
-            <span className="bar-4"></span>
           </div>
         </div>
       </div>

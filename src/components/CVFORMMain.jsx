@@ -9,6 +9,8 @@ function CVFORMAIN() {
     email: "Email",
     phoneNumber: "Phone Number",
     cvIntroduction: "Introduction",
+    skill: { skillName: "Skill", skillLevel: 0 },
+    language: { languageName: "Language", languageLevel: 0 },
     position: "Position",
     company: "Company",
     experienceDate: "Date",
@@ -19,25 +21,18 @@ function CVFORMAIN() {
     educationExperience: "Experience",
   });
 
-  // const [lastName, setLastName] = useState("Last Name");
-  // const [email, setEmail] = useState("Email");
-  // const [phoneNumber, setPhoneNumber] = useState("Phone Number");
-  // const [cvIntroduction, setCvIntroduction] = useState("Introduction");
-  // const [position, setPosition] = useState("Position");
-  // const [company, setCompany] = useState("Company");
-  // const [experienceDate, setExperienceDate] = useState("Date");
-  // const [experienceAchievements, setExperienceAchievements] =
-  //   useState("Achievements");
-  // const [placeOfEducation, setPlaceOfEducation] = useState(
-  //   "Location of Education"
-  // );
-  // const [educationDate, setEducationDate] = useState("Date");
-  // const [educationField, setEducationField] = useState("Field");
-  // const [educationExperience, setEducationExperience] = useState("Experience");
-
-  function handleChange(e) {
+  function handleChange(e, objectName) {
     const value = e.target.value;
-    setFormState({ ...formState, [e.target.name]: value });
+    let valueName = e.target.name;
+
+    if (typeof formState[valueName] == "object") {
+      setFormState({
+        ...formState,
+        [valueName]: { ...formState[valueName], [objectName]: value },
+      });
+    } else {
+      setFormState({ ...formState, [valueName]: value });
+    }
   }
 
   return (
@@ -49,3 +44,9 @@ function CVFORMAIN() {
 }
 
 export default CVFORMAIN;
+
+// Form section needs more CSS.
+// The Download button must be placed somewhere more appropriate.
+// More forms need to be added so they can be linked to CV.
+// A way of requesting more forms must be added to add multiple experiences, skills or language.
+// Download just as an image instead of PDF?

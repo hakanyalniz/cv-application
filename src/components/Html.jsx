@@ -1,5 +1,5 @@
 import html2canvas from "html2canvas";
-import jspdf from "jspdf";
+// import { saveAs } from "file-saver";
 import CV from "./CV";
 
 export default function Html({ formState }) {
@@ -8,18 +8,13 @@ export default function Html({ formState }) {
       <CV formState={formState} />
       <button
         onClick={() => {
-          const check = document.getElementById("jspdf");
+          const check = document.getElementById("CVCanvas");
           html2canvas(check, {
             scale: 2,
           }).then((canvas) => {
-            const imgData = canvas.toDataURL("image/png", 1.0);
-
-            const height = (canvas.height * 210) / canvas.width;
-
-            const pdf = new jspdf("p", "mm", "a4");
-
-            pdf.addImage(imgData, "PNG", 0, 0, 210, height);
-            pdf.save("export.pdf");
+            canvas.toBlob(function (blob) {
+              window.saveAs(blob, "my_CV.jpg");
+            });
           });
         }}
       >

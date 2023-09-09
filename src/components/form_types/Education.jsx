@@ -36,6 +36,8 @@ export function Education(handleChange) {
       <textarea
         id="educationExperience"
         name="educationExperience"
+        rows="4"
+        cols="55"
         onChange={handleChange}
       ></textarea>
     </div>,
