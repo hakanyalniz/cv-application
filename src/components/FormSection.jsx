@@ -1,8 +1,11 @@
 import "../styles/FormSection.css";
 import Forms from "./forms";
+import DynamicForms from "./dynamicForms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
+import { Skills } from "./form_types/Skills";
+import { Languages } from "./form_types/Languages";
 
 function FormSection({ handleChange }) {
   return (
@@ -19,10 +22,18 @@ function FormSection({ handleChange }) {
           formType={PersonalInformation(handleChange)}
           legend="Personal Information"
         />
-        <Forms
-          formType={skillAndLanguage(handleChange)}
-          legend="Skill and Language"
-        />
+        <fieldset>
+          <button>Add Skills</button>
+          <legend>Skills</legend>
+          <DynamicForms formType={Skills(handleChange)} legend="Skill" />
+        </fieldset>
+
+        <fieldset>
+          <button>Add Languages</button>
+          <legend>Languages</legend>
+          <DynamicForms formType={Languages(handleChange)} legend="Languages" />
+        </fieldset>
+
         <Forms formType={Experience(handleChange)} legend="Experience" />
         <Forms formType={Education(handleChange)} legend="Education" />
       </div>
