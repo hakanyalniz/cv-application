@@ -3,7 +3,6 @@ import Forms from "./forms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
-import { skillAndLanguage } from "./form_types/skillAndLanguage";
 
 function FormSection({ handleChange }) {
   return (
