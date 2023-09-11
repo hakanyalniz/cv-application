@@ -3,43 +3,40 @@ import CVSection from "./CVSection.jsx";
 import { useState } from "react";
 
 function CVFORMAIN() {
-  // const [dynamicForm, setDynamicForm] = useState([
-  //   { id: "skill", skillName: "Skill", skillLevel: 0 },
-  //   { id: "language", languageName: "Language", languageLevel: 0 },
-  // ]);
-
-  const [dynamicForm, setDynamicForm] = useState([
+  const [skillForm, setSkillForm] = useState([
     { id: "skill", name: "Skill", level: 0 },
+  ]);
+  const [languageForm, setLanguageForm] = useState([
     { id: "language", name: "Language", level: 0 },
   ]);
 
   const addInput = (id) => {
     if (id === "skill") {
-      setDynamicForm([
-        ...dynamicForm,
+      // setDynamicForm([
+        setSkillForm([
+        ...skillForm,
         { id: "skill", name: "Skill", level: 0 },
       ]);
     } else if (id === "language") {
-      setDynamicForm([
-        ...dynamicForm,
+      // setDynamicForm([
+        setLanguageForm([
+        ...languageForm,
         { id: "language", name: "Language", level: 0 },
       ]);
     }
   };
 
-  const removeInput = (index) => {
-    const updatedInputs = [...dynamicForm];
+  const removeInput = (index, inputType, setInputType) => {
+    const updatedInputs = [...inputType];
     updatedInputs.splice(index, 1);
-    setDynamicForm(updatedInputs);
+    setInputType(updatedInputs);
   };
 
-  const handleDynamicChange = (index, field, event) => {
-    const updatedInputs = [...dynamicForm];
-    console.log(updatedInputs[index][field]);
+  const handleDynamicChange = (index, field, event, inputType, setInputType) => {
+    const updatedInputs = [...inputType];
 
     updatedInputs[index][field] = event.target.value;
-    setDynamicForm(updatedInputs);
-    // console.log(dynamicForm);
+    setInputType(updatedInputs);
   };
 
   const [formState, setFormState] = useState({
@@ -67,13 +64,17 @@ function CVFORMAIN() {
   return (
     <div className="flex-container">
       <FormSection
-        dynamicForm={dynamicForm}
         addInput={addInput}
         removeInput={removeInput}
         handleFormChange={handleFormChange}
         handleDynamicChange={handleDynamicChange}
+        skillForm={skillForm}
+        setSkillForm={setSkillForm}
+        languageForm={languageForm}
+        setLanguageForm={setLanguageForm}
       />
-      <CVSection formState={formState} dynamicForm={dynamicForm} />
+
+      <CVSection formState={formState} skillForm={skillForm} languageForm={languageForm}/>
     </div>
   );
 }

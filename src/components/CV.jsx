@@ -1,6 +1,6 @@
 import "../styles/CV.css";
 
-function CV({ formState, dynamicForm }) {
+function CV({ formState, dynamicForm, skillForm, languageForm }) {
   return (
     <div id="CVCanvas" className="CVPage">
       <div className="left-navbar">
@@ -22,9 +22,7 @@ function CV({ formState, dynamicForm }) {
         </div>
         <div className="skills padding-within-elements">
           <div className="title border-bar">Skills</div>
-          {dynamicForm
-            .filter((input) => input.id === "skill") // Filter only items with id "skill"
-            .map((input, index) => {
+          {skillForm.map((input, index) => {
               return (
                 <>
                   <div>{input.name}</div>
@@ -37,9 +35,7 @@ function CV({ formState, dynamicForm }) {
         </div>
         <div className="languages padding-within-elements">
           <div className="title border-bar">Languages</div>
-          {dynamicForm
-            .filter((input) => input.id === "language") // Filter only items with id "skill"
-            .map((input, index) => {
+          {languageForm.map((input, index) => {
               return (
                 <>
                   <div>{input.name}</div>

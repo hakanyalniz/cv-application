@@ -1,21 +1,11 @@
 import "../styles/CVSection.css";
 import Html from "./Html";
-// import { PDFViewer } from "@react-pdf/renderer";
-// import { MyDocument } from "./MyDocument";
 
-function CVSection({ formState, dynamicForm }) {
+function CVSection({ formState, dynamicForm, skillForm, languageForm }) {
   return (
     <div className="CV-section">
       <div className="CV-wrapper">
-        <Html formState={formState} dynamicForm={dynamicForm} />
-
-        {/* <PDFViewer
-          // style={{ width: 650, height: 842 }}
-          showToolbar={false}
-          id="PDFViewer"
-        >
-          <MyDocument />
-        </PDFViewer> */}
+        <Html formState={formState} dynamicForm={dynamicForm} skillForm={skillForm} languageForm={languageForm}/>
       </div>
     </div>
   );

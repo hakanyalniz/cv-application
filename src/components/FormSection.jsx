@@ -1,22 +1,24 @@
 import "../styles/FormSection.css";
-import Forms from "./forms";
-import DynamicForms from "./dynamicForms";
+import Forms from "./Forms";
+import DynamicForms from "./DynamicForms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
-import { Skills } from "./form_types/Skills";
-import { Languages } from "./form_types/Languages";
+
 
 function FormSection({
   handleFormChange,
-  dynamicForm,
   handleDynamicChange,
   addInput,
   removeInput,
+  skillForm,
+  setSkillForm,
+  languageForm,
+  setLanguageForm
 }) {
-  const skillForms = dynamicForm.filter((form) => form.id === "skill");
-  // console.log(skillForms);
-  const languageForms = dynamicForm.filter((form) => form.id === "language");
+  // const skillForms = dynamicForm.filter((form) => form.id === "skill");
+  // // console.log(skillForms);
+  // const languageForms = dynamicForm.filter((form) => form.id === "language");
   return (
     <div className="form-section">
       <div className="introduction">
@@ -35,7 +37,8 @@ function FormSection({
           <button onClick={() => addInput("skill")}>Add Skill</button>
           <legend>Skills</legend>
           <DynamicForms
-            dynamicForm={skillForms} // Pass only the filtered "skill" item
+            typeForm={skillForm}
+            setTypeForm={setSkillForm}
             handleDynamicChange={handleDynamicChange}
             removeInput={removeInput}
           />
@@ -60,16 +63,12 @@ function FormSection({
         <fieldset>
           <button onClick={() => addInput("language")}>Add Language</button>
           <legend>Languages</legend>
-          {dynamicForm
-            .filter((input) => input.id === "language")
-            .map((filteredInput, index) => (
-              <DynamicForms
-                key={index}
-                dynamicForm={[filteredInput]}
-                handleDynamicChange={handleDynamicChange}
-                removeInput={removeInput}
-              />
-            ))}
+          <DynamicForms
+            typeForm={languageForm}
+            setTypeForm={setLanguageForm}
+            handleDynamicChange={handleDynamicChange}
+            removeInput={removeInput}
+          />
         </fieldset>
 
         <Forms formType={Experience(handleFormChange)} legend="Experience" />
