@@ -3,11 +3,11 @@ import Html from "./Html";
 // import { PDFViewer } from "@react-pdf/renderer";
 // import { MyDocument } from "./MyDocument";
 
-function CVSection({ formState }) {
+function CVSection({ formState, dynamicForm }) {
   return (
     <div className="CV-section">
       <div className="CV-wrapper">
-        <Html formState={formState} />
+        <Html formState={formState} dynamicForm={dynamicForm} />
 
         {/* <PDFViewer
           // style={{ width: 650, height: 842 }}

@@ -1,6 +1,6 @@
 import "../styles/CV.css";
 
-function CV({ formState }) {
+function CV({ formState, dynamicForm }) {
   return (
     <div id="CVCanvas" className="CVPage">
       <div className="left-navbar">
@@ -22,21 +22,33 @@ function CV({ formState }) {
         </div>
         <div className="skills padding-within-elements">
           <div className="title border-bar">Skills</div>
-          <div>{formState.skill.skillName}</div>
-          <div
-            className={`skill-bar-1 bar-level-${formState.skill.skillLevel}`}
-          >
-            <span className="bar-1"></span>
-          </div>
+          {dynamicForm
+            .filter((input) => input.id === "skill") // Filter only items with id "skill"
+            .map((input, index) => {
+              return (
+                <>
+                  <div>{input.name}</div>
+                  <div className={`skill-bar-1 bar-level-${input.level}`}>
+                    <span className="bar-1"></span>
+                  </div>
+                </>
+              );
+            })}
         </div>
         <div className="languages padding-within-elements">
           <div className="title border-bar">Languages</div>
-          <div>{formState.language.languageName}</div>
-          <div
-            className={`skill-bar-1 bar-level-${formState.language.languageLevel}`}
-          >
-            <span className="bar-1"></span>
-          </div>
+          {dynamicForm
+            .filter((input) => input.id === "language") // Filter only items with id "skill"
+            .map((input, index) => {
+              return (
+                <>
+                  <div>{input.name}</div>
+                  <div className={`skill-bar-1 bar-level-${input.level}`}>
+                    <span className="bar-1"></span>
+                  </div>
+                </>
+              );
+            })}
         </div>
       </div>
       <div className="main-body">

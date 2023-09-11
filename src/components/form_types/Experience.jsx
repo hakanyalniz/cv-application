@@ -1,4 +1,4 @@
-export function Experience(handleChange) {
+export function Experience(handleFormChange) {
   const Experience = [
     <div>
       <label htmlFor="position">Position</label>
@@ -7,13 +7,18 @@ export function Experience(handleChange) {
         type="text"
         id="position"
         name="position"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
       <label htmlFor="company">Company</label>
       <br />
-      <input type="text" id="company" name="company" onChange={handleChange} />
+      <input
+        type="text"
+        id="company"
+        name="company"
+        onChange={handleFormChange}
+      />
     </div>,
     <div>
       <label htmlFor="experienceDate">Date</label>
@@ -22,7 +27,7 @@ export function Experience(handleChange) {
         type="date"
         id="experienceDate"
         name="experienceDate"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -32,7 +37,7 @@ export function Experience(handleChange) {
         type="email"
         id="experienceAchievements"
         name="experienceAchievements"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
   ];

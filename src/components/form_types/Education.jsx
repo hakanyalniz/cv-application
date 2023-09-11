@@ -1,4 +1,4 @@
-export function Education(handleChange) {
+export function Education(handleFormChange) {
   const Education = [
     <div>
       <label htmlFor="educationField">Field</label>
@@ -7,7 +7,7 @@ export function Education(handleChange) {
         type="text"
         id="educationField"
         name="educationField"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -17,7 +17,7 @@ export function Education(handleChange) {
         type="text"
         id="placeOfEducation"
         name="placeOfEducation"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -27,7 +27,7 @@ export function Education(handleChange) {
         type="date"
         id="educationDate"
         name="educationDate"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -38,7 +38,7 @@ export function Education(handleChange) {
         name="educationExperience"
         rows="4"
         cols="55"
-        onChange={handleChange}
+        onChange={handleFormChange}
       ></textarea>
     </div>,
   ];

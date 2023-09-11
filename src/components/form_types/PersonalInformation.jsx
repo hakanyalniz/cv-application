@@ -1,4 +1,4 @@
-export function PersonalInformation(handleChange) {
+export function PersonalInformation(handleFormChange) {
   const PersonalInformation = [
     <div>
       <label htmlFor="firstName">First name</label>
@@ -7,7 +7,7 @@ export function PersonalInformation(handleChange) {
         type="text"
         id="firstName"
         name="firstName"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -17,13 +17,13 @@ export function PersonalInformation(handleChange) {
         type="text"
         id="lastName"
         name="lastName"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
       <label htmlFor="email">E-mail</label>
       <br />
-      <input type="email" id="email" name="email" onChange={handleChange} />
+      <input type="email" id="email" name="email" onChange={handleFormChange} />
     </div>,
     <div>
       <label htmlFor="phoneNumber">Phone Number</label>
@@ -32,7 +32,7 @@ export function PersonalInformation(handleChange) {
         type="number"
         id="phoneNumber"
         name="phoneNumber"
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
     </div>,
     <div>
@@ -43,7 +43,7 @@ export function PersonalInformation(handleChange) {
         name="cvIntroduction"
         rows="4"
         cols="55"
-        onChange={handleChange}
+        onChange={handleFormChange}
       ></textarea>
     </div>,
   ];
