@@ -1,4 +1,9 @@
-function DynamicForms({ handleDynamicChange, removeInput, typeForm, setTypeForm}) {
+function SkillAndLanguageForms({
+  handleDynamicChange,
+  removeInput,
+  typeForm,
+  setTypeForm,
+}) {
   return (
     <form>
       {typeForm.map((dynamicInput, index) => (
@@ -7,11 +12,15 @@ function DynamicForms({ handleDynamicChange, removeInput, typeForm, setTypeForm}
             type="text"
             placeholder="Enter input"
             value={dynamicInput.name}
-            onChange={(event) => handleDynamicChange(index, "name", event, typeForm, setTypeForm)}
+            onChange={(event) =>
+              handleDynamicChange(index, "name", event, typeForm, setTypeForm)
+            }
           />
           <select
             value={dynamicInput.level}
-            onChange={(event) => handleDynamicChange(index, "level", event, typeForm, setTypeForm)}
+            onChange={(event) =>
+              handleDynamicChange(index, "level", event, typeForm, setTypeForm)
+            }
           >
             <option value="0">Select Level:</option>
             <option value="1">Beginner</option>
@@ -20,7 +29,10 @@ function DynamicForms({ handleDynamicChange, removeInput, typeForm, setTypeForm}
             <option value="4">Expert</option>
           </select>
           {/* {console.log(index)} */}
-          <button type="button" onClick={() => removeInput(index, typeForm, setTypeForm)}>
+          <button
+            type="button"
+            onClick={() => removeInput(index, typeForm, setTypeForm)}
+          >
             Remove
           </button>
         </div>
@@ -29,4 +41,4 @@ function DynamicForms({ handleDynamicChange, removeInput, typeForm, setTypeForm}
   );
 }
 
-export default DynamicForms;
+export default SkillAndLanguageForms;

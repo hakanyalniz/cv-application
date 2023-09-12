@@ -1,24 +1,27 @@
 import "../styles/FormSection.css";
 import Forms from "./Forms";
-import DynamicForms from "./DynamicForms";
+import SkillAndLanguageForms from "./SkillAndLanguageForms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import { Experience } from "./form_types/Experience";
 import { Education } from "./form_types/Education";
-
+import ExperienceForm from "./ExperienceForm";
 
 function FormSection({
   handleFormChange,
   handleDynamicChange,
+  handleListChanges,
   addInput,
+  addAchievement,
   removeInput,
   skillForm,
   setSkillForm,
   languageForm,
-  setLanguageForm
+  setLanguageForm,
+  experienceForm,
+  setExperienceForm,
+  educationForm,
+  setEducationForm,
 }) {
-  // const skillForms = dynamicForm.filter((form) => form.id === "skill");
-  // // console.log(skillForms);
-  // const languageForms = dynamicForm.filter((form) => form.id === "language");
   return (
     <div className="form-section">
       <div className="introduction">
@@ -36,7 +39,7 @@ function FormSection({
         <fieldset>
           <button onClick={() => addInput("skill")}>Add Skill</button>
           <legend>Skills</legend>
-          <DynamicForms
+          <SkillAndLanguageForms
             typeForm={skillForm}
             setTypeForm={setSkillForm}
             handleDynamicChange={handleDynamicChange}
@@ -63,7 +66,7 @@ function FormSection({
         <fieldset>
           <button onClick={() => addInput("language")}>Add Language</button>
           <legend>Languages</legend>
-          <DynamicForms
+          <SkillAndLanguageForms
             typeForm={languageForm}
             setTypeForm={setLanguageForm}
             handleDynamicChange={handleDynamicChange}
@@ -71,8 +74,31 @@ function FormSection({
           />
         </fieldset>
 
-        <Forms formType={Experience(handleFormChange)} legend="Experience" />
-        <Forms formType={Education(handleFormChange)} legend="Education" />
+        <fieldset>
+          <button onClick={() => addInput("experience")}>Add Experience</button>
+          <legend>Experiences</legend>
+          <ExperienceForm
+            typeForm={experienceForm}
+            addAchievement={addAchievement}
+            setTypeForm={setExperienceForm}
+            handleDynamicChange={handleDynamicChange}
+            handleListChanges={handleListChanges}
+            removeInput={removeInput}
+          />
+        </fieldset>
+
+        <fieldset>
+          <button onClick={() => addInput("education")}>Add Education</button>
+          <legend>Education</legend>
+          <ExperienceForm
+            typeForm={educationForm}
+            addAchievement={addAchievement}
+            setTypeForm={setEducationForm}
+            handleDynamicChange={handleDynamicChange}
+            handleListChanges={handleListChanges}
+            removeInput={removeInput}
+          />
+        </fieldset>
       </div>
     </div>
   );

@@ -3,6 +3,26 @@ import CVSection from "./CVSection.jsx";
 import { useState } from "react";
 
 function CVFORMAIN() {
+  const [experienceForm, setExperienceForm] = useState([
+    {
+      id: "experience",
+      position: "Position",
+      company: "Company",
+      date: "Date",
+      achievements: [""],
+    },
+  ]);
+
+  const [educationForm, setEducationForm] = useState([
+    {
+      id: "education",
+      field: "Field",
+      location: "Location",
+      date: "Date",
+      achievements: [""],
+    },
+  ]);
+
   const [skillForm, setSkillForm] = useState([
     { id: "skill", name: "Skill", level: 0 },
   ]);
@@ -12,18 +32,41 @@ function CVFORMAIN() {
 
   const addInput = (id) => {
     if (id === "skill") {
-      // setDynamicForm([
-        setSkillForm([
-        ...skillForm,
-        { id: "skill", name: "Skill", level: 0 },
-      ]);
+      setSkillForm([...skillForm, { id: "skill", name: "Skill", level: 0 }]);
     } else if (id === "language") {
-      // setDynamicForm([
-        setLanguageForm([
+      setLanguageForm([
         ...languageForm,
         { id: "language", name: "Language", level: 0 },
       ]);
+    } else if (id === "experience") {
+      setExperienceForm([
+        ...experienceForm,
+        {
+          id: "experience",
+          position: "Position",
+          company: "Company",
+          date: "Date",
+          achievements: [""],
+        },
+      ]);
+    } else if (id === "education") {
+      setEducationForm([
+        ...educationForm,
+        {
+          id: "education",
+          field: "Field",
+          location: "Location",
+          date: "Date",
+          achievements: [""],
+        },
+      ]);
     }
+  };
+
+  const addAchievement = (index, inputType, setInputType) => {
+    const updatedInputForm = [...inputType];
+    updatedInputForm[index].achievements.push("");
+    setInputType(updatedInputForm);
   };
 
   const removeInput = (index, inputType, setInputType) => {
@@ -32,11 +75,31 @@ function CVFORMAIN() {
     setInputType(updatedInputs);
   };
 
-  const handleDynamicChange = (index, field, event, inputType, setInputType) => {
+  // For skill and language fields, one's that can dynamically change
+  const handleDynamicChange = (
+    index,
+    field,
+    event,
+    inputType,
+    setInputType
+  ) => {
     const updatedInputs = [...inputType];
 
     updatedInputs[index][field] = event.target.value;
     setInputType(updatedInputs);
+  };
+
+  const handleListChanges = (
+    experienceIndex,
+    achievementIndex,
+    event,
+    inputType,
+    setInputType
+  ) => {
+    const updatedExperienceForm = [...inputType];
+    updatedExperienceForm[experienceIndex].achievements[achievementIndex] =
+      event.target.value;
+    setInputType(updatedExperienceForm);
   };
 
   const [formState, setFormState] = useState({
@@ -55,6 +118,7 @@ function CVFORMAIN() {
     educationExperience: "Experience",
   });
 
+  // For the above states, only "static" fields
   function handleFormChange(e, objectName) {
     const value = e.target.value;
     let valueName = e.target.name;
@@ -65,16 +129,28 @@ function CVFORMAIN() {
     <div className="flex-container">
       <FormSection
         addInput={addInput}
+        addAchievement={addAchievement}
         removeInput={removeInput}
         handleFormChange={handleFormChange}
         handleDynamicChange={handleDynamicChange}
+        handleListChanges={handleListChanges}
         skillForm={skillForm}
         setSkillForm={setSkillForm}
         languageForm={languageForm}
         setLanguageForm={setLanguageForm}
+        experienceForm={experienceForm}
+        setExperienceForm={setExperienceForm}
+        educationForm={educationForm}
+        setEducationForm={setEducationForm}
       />
 
-      <CVSection formState={formState} skillForm={skillForm} languageForm={languageForm}/>
+      <CVSection
+        formState={formState}
+        skillForm={skillForm}
+        languageForm={languageForm}
+        experienceForm={experienceForm}
+        educationForm={educationForm}
+      />
     </div>
   );
 }
@@ -83,6 +159,6 @@ export default CVFORMAIN;
 
 // Form section needs more CSS.
 // The Download button must be placed somewhere more appropriate.
-// More forms need to be added so they can be linked to CV.
-// A way of requesting more forms must be added to add multiple experiences, skills or language.
-// Download just as an image instead of PDF?
+// DONE - More forms need to be added so they can be linked to CV.
+// DONE - A way of requesting more forms must be added to add multiple experiences, skills or language.
+// DONE - Download just as an image instead of PDF?

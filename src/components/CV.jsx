@@ -1,6 +1,13 @@
 import "../styles/CV.css";
 
-function CV({ formState, dynamicForm, skillForm, languageForm }) {
+function CV({
+  formState,
+  dynamicForm,
+  skillForm,
+  languageForm,
+  experienceForm,
+  educationForm,
+}) {
   return (
     <div id="CVCanvas" className="CVPage">
       <div className="left-navbar">
@@ -23,28 +30,28 @@ function CV({ formState, dynamicForm, skillForm, languageForm }) {
         <div className="skills padding-within-elements">
           <div className="title border-bar">Skills</div>
           {skillForm.map((input, index) => {
-              return (
-                <>
-                  <div>{input.name}</div>
-                  <div className={`skill-bar-1 bar-level-${input.level}`}>
-                    <span className="bar-1"></span>
-                  </div>
-                </>
-              );
-            })}
+            return (
+              <>
+                <div>{input.name}</div>
+                <div className={`skill-bar-1 bar-level-${input.level}`}>
+                  <span className="bar-1"></span>
+                </div>
+              </>
+            );
+          })}
         </div>
         <div className="languages padding-within-elements">
           <div className="title border-bar">Languages</div>
           {languageForm.map((input, index) => {
-              return (
-                <>
-                  <div>{input.name}</div>
-                  <div className={`skill-bar-1 bar-level-${input.level}`}>
-                    <span className="bar-1"></span>
-                  </div>
-                </>
-              );
-            })}
+            return (
+              <>
+                <div>{input.name}</div>
+                <div className={`skill-bar-1 bar-level-${input.level}`}>
+                  <span className="bar-1"></span>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
       <div className="main-body">
@@ -52,38 +59,45 @@ function CV({ formState, dynamicForm, skillForm, languageForm }) {
 
         <div className="experience">
           <div className="title sub-title">Experience</div>
-          <div className="experience-grid">
-            <div className="experience-date">{formState.experienceDate}</div>
-            <div className="experience-details">
-              <div className="title">{formState.position}</div>
-              <div className="title-location">{formState.company}</div>
-              <ul>
-                <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  architecto?
-                </li>
-                <li>
-                  Repellendus quod dicta nostrum hic neque at doloremque soluta
-                </li>
-                <li>
-                  consectetur perspiciatis, libero vel reiciendis. Voluptatibus
-                </li>
-                <li>laboriosam vel iusto praesentium dolorum blanditiis</li>
-              </ul>
-            </div>
-          </div>
+          {experienceForm.map((input, index) => {
+            return (
+              <>
+                <div className="experience-grid">
+                  <div className="experience-date">{input.date}</div>
+                  <div className="experience-details">
+                    <div className="title">{input.position}</div>
+                    <div className="title-location">{input.company}</div>
+                    <ul>
+                      {input.achievements.map((listItem) => {
+                        return <li>{listItem}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
-
         <div className="education">
           <div className="title sub-title">Education</div>
-          <div className="education-grid">
-            <div className="education-date">{formState.educationDate}</div>
-            <div className="education-details">
-              <div className="title">{formState.educationField}</div>
-              <div className="title-location">{formState.placeOfEducation}</div>
-              {formState.educationExperience}
-            </div>
-          </div>
+          {educationForm.map((input, index) => {
+            return (
+              <>
+                <div className="education-grid">
+                  <div className="education-date">{input.date}</div>
+                  <div className="education-details">
+                    <div className="title">{input.field}</div>
+                    <div className="title-location">{input.location}</div>
+                    <ul>
+                      {input.achievements.map((listItem) => {
+                        return <li>{listItem}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </div>

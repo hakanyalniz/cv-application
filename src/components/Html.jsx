@@ -2,10 +2,24 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import CV from "./CV";
 
-export default function Html({ formState, dynamicForm, skillForm, languageForm }) {
+export default function Html({
+  formState,
+  dynamicForm,
+  skillForm,
+  languageForm,
+  experienceForm,
+  educationForm,
+}) {
   return (
     <>
-      <CV formState={formState} dynamicForm={dynamicForm} skillForm={skillForm} languageForm={languageForm}/>
+      <CV
+        formState={formState}
+        dynamicForm={dynamicForm}
+        skillForm={skillForm}
+        languageForm={languageForm}
+        experienceForm={experienceForm}
+        educationForm={educationForm}
+      />
       <button
         onClick={() => {
           const check = document.getElementById("CVCanvas");
