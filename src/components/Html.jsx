@@ -1,5 +1,3 @@
-import html2canvas from "html2canvas";
-import { saveAs } from "file-saver";
 import CV from "./CV";
 
 export default function Html({
@@ -9,6 +7,7 @@ export default function Html({
   languageForm,
   experienceForm,
   educationForm,
+  colorSet,
 }) {
   return (
     <>
@@ -19,6 +18,7 @@ export default function Html({
         languageForm={languageForm}
         experienceForm={experienceForm}
         educationForm={educationForm}
+        colorSet={colorSet}
       />
     </>
   );

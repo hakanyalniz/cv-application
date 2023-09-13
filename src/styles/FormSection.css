@@ -20,7 +20,17 @@ media queries: em
 px only for little things like shadows, borders etc. */
 
 .form-section .menu {
+  display: flex;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
   max-width: 500px;
+}
+
+.form-section .menu .color-picker {
+  margin: 0 5px;
+}
+
+.form-section .menu .color-picker > input[type="color"] + label {
+  margin-left: 5px;
 }
 
 .form-section .forms {

@@ -3,6 +3,33 @@ import CVSection from "./CVSection.jsx";
 import { useState } from "react";
 
 function CVFORMAIN() {
+  const [colorSet, setColorSet] = useState({
+    colors: {
+      primary: "#696781",
+      secondary: "#f5f3ff",
+      borders: "#413f4f",
+    },
+  });
+
+  const handleColorChange = (e, mode) => {
+    if (mode == "RESET") {
+      setColorSet({
+        colors: {
+          primary: "#696781",
+          secondary: "#f5f3ff",
+          borders: "#413f4f",
+        },
+      });
+      return;
+    }
+    const colorName = e.target.name;
+    const color = e.target.value;
+    const updatedColor = { ...colorSet };
+
+    updatedColor.colors[colorName] = color;
+    setColorSet(updatedColor);
+  };
+
   const [experienceForm, setExperienceForm] = useState([
     {
       id: "experience",
@@ -133,6 +160,7 @@ function CVFORMAIN() {
         handleFormChange={handleFormChange}
         handleDynamicChange={handleDynamicChange}
         handleListChanges={handleListChanges}
+        handleColorChange={handleColorChange}
         skillForm={skillForm}
         setSkillForm={setSkillForm}
         languageForm={languageForm}
@@ -149,6 +177,7 @@ function CVFORMAIN() {
         languageForm={languageForm}
         experienceForm={experienceForm}
         educationForm={educationForm}
+        colorSet={colorSet}
       />
     </div>
   );

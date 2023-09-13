@@ -3,11 +3,14 @@ import Forms from "./Forms";
 import SkillAndLanguageForms from "./SkillAndLanguageForms";
 import { PersonalInformation } from "./form_types/PersonalInformation";
 import ExpAndEduForm from "./ExpAndEduForm";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 function FormSection({
   handleFormChange,
   handleDynamicChange,
   handleListChanges,
+  handleColorChange,
   addInput,
   addAchievement,
   removeInput,
@@ -38,6 +41,36 @@ function FormSection({
         >
           Download
         </button>
+        <button type="button" onClick={(e) => handleColorChange(e, "RESET")}>
+          Default
+        </button>
+        <div className="color-picker">
+          <input
+            type="color"
+            id="primary"
+            name="primary"
+            onChange={(e) => handleColorChange(e)}
+          />
+          <label htmlFor="primary">Primary</label>
+        </div>
+        <div className="color-picker">
+          <input
+            type="color"
+            id="secondary"
+            name="secondary"
+            onChange={(e) => handleColorChange(e)}
+          />
+          <label htmlFor="secondary">Secondary</label>
+        </div>
+        <div className="color-picker">
+          <input
+            type="color"
+            id="borders"
+            name="borders"
+            onChange={(e) => handleColorChange(e)}
+          />
+          <label htmlFor="borders">Border</label>
+        </div>
       </div>
       <hr />
       <div className="forms">

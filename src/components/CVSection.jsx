@@ -8,6 +8,7 @@ function CVSection({
   languageForm,
   experienceForm,
   educationForm,
+  colorSet,
 }) {
   return (
     <div className="CV-section">
@@ -19,6 +20,7 @@ function CVSection({
           languageForm={languageForm}
           experienceForm={experienceForm}
           educationForm={educationForm}
+          colorSet={colorSet}
         />
       </div>
     </div>

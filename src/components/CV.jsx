@@ -7,17 +7,26 @@ function CV({
   languageForm,
   experienceForm,
   educationForm,
+  colorSet,
 }) {
   return (
     <div id="CVCanvas" className="CVPage">
-      <div className="left-navbar">
+      <div
+        className="left-navbar"
+        style={{ backgroundColor: colorSet.colors.primary }}
+      >
         <div className="name-title">
           <div className="fullName">
             {`${formState.firstName} ${formState.lastName}`}
           </div>
         </div>
         <div className="personal-information padding-within-elements">
-          <div className="title border-bar">Personal Info</div>
+          <div
+            className="title border-bar"
+            style={{ backgroundColor: colorSet.colors.borders }}
+          >
+            Personal Info
+          </div>
           <div className="email">
             <div className="sub-title">E-Mail</div>
             {formState.email}
@@ -28,7 +37,12 @@ function CV({
           </div>
         </div>
         <div className="skills padding-within-elements">
-          <div className="title border-bar">Skills</div>
+          <div
+            className="title border-bar"
+            style={{ backgroundColor: colorSet.colors.borders }}
+          >
+            Skills
+          </div>
           {skillForm.map((input, index) => {
             return (
               <>
@@ -41,7 +55,12 @@ function CV({
           })}
         </div>
         <div className="languages padding-within-elements">
-          <div className="title border-bar">Languages</div>
+          <div
+            className="title border-bar"
+            style={{ backgroundColor: colorSet.colors.borders }}
+          >
+            Languages
+          </div>
           {languageForm.map((input, index) => {
             return (
               <>
@@ -54,11 +73,22 @@ function CV({
           })}
         </div>
       </div>
-      <div className="main-body">
+      <div
+        className="main-body"
+        style={{ backgroundColor: colorSet.colors.secondary }}
+      >
         <div className="introduction">{formState.cvIntroduction}</div>
 
         <div className="experience">
-          <div className="title sub-title">Experience</div>
+          <div
+            className="title sub-title"
+            style={{
+              borderTop: `1px solid ${colorSet.colors.borders}`,
+              borderBottom: `1px solid ${colorSet.colors.borders}`,
+            }}
+          >
+            Experience
+          </div>
           {experienceForm.map((input, index) => {
             return (
               <>
@@ -79,7 +109,15 @@ function CV({
           })}
         </div>
         <div className="education">
-          <div className="title sub-title">Education</div>
+          <div
+            className="title sub-title"
+            style={{
+              borderTop: `1px solid ${colorSet.colors.borders}`,
+              borderBottom: `1px solid ${colorSet.colors.borders}`,
+            }}
+          >
+            Education
+          </div>
           {educationForm.map((input, index) => {
             return (
               <>
