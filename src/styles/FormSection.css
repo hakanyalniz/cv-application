@@ -19,7 +19,7 @@ media queries: em
 
 px only for little things like shadows, borders etc. */
 
-.form-section .introduction {
+.form-section .menu {
   max-width: 500px;
 }
 

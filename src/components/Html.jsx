@@ -20,20 +20,6 @@ export default function Html({
         experienceForm={experienceForm}
         educationForm={educationForm}
       />
-      <button
-        onClick={() => {
-          const check = document.getElementById("CVCanvas");
-          html2canvas(check, {
-            scale: 2,
-          }).then((canvas) => {
-            canvas.toBlob(function (blob) {
-              window.saveAs(blob, "my_CV.jpg");
-            });
-          });
-        }}
-      >
-        Download
-      </button>
     </>
   );
 }

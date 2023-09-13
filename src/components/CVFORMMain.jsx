@@ -108,14 +108,6 @@ function CVFORMAIN() {
     email: "Email",
     phoneNumber: "Phone Number",
     cvIntroduction: "Introduction",
-    position: "Position",
-    company: "Company",
-    experienceDate: "Date",
-    experienceAchievements: "Achievements",
-    placeOfEducation: "Location of Education",
-    educationDate: "Date",
-    educationField: "Field",
-    educationExperience: "Experience",
   });
 
   // For the above states, only "static" fields

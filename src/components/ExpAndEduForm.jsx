@@ -1,4 +1,4 @@
-function ExperienceForm({
+function ExpAndEduForm({
   handleDynamicChange,
   handleListChanges,
   handleAchievementChange,
@@ -20,13 +20,13 @@ function ExperienceForm({
 
   let changeFieldFirst = "Input Field";
   let changeFieldSecond = "Input Field";
-  if (typeForm[0].id === "experience") {
+  if (typeForm[0] && typeForm[0].id === "experience") {
     firstField = "Position";
     secondField = "Company";
 
     changeFieldFirst = "position";
     changeFieldSecond = "company";
-  } else if (typeForm[0].id === "education") {
+  } else if (typeForm[0] && typeForm[0].id === "education") {
     firstField = "Field";
     secondField = "Location";
 
@@ -138,4 +138,4 @@ function ExperienceForm({
   );
 }
 
-export default ExperienceForm;
+export default ExpAndEduForm;
