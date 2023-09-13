@@ -11,6 +11,7 @@ function FormSection({
   addInput,
   addAchievement,
   removeInput,
+  removeListItem,
   skillForm,
   setSkillForm,
   languageForm,
@@ -76,6 +77,7 @@ function FormSection({
             handleDynamicChange={handleDynamicChange}
             handleListChanges={handleListChanges}
             removeInput={removeInput}
+            removeListItem={removeListItem}
           />
         </fieldset>
 
@@ -89,6 +91,7 @@ function FormSection({
             handleDynamicChange={handleDynamicChange}
             handleListChanges={handleListChanges}
             removeInput={removeInput}
+            removeListItem={removeListItem}
           />
         </fieldset>
       </div>

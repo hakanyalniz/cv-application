@@ -3,6 +3,7 @@ function ExpAndEduForm({
   handleListChanges,
   handleAchievementChange,
   removeInput,
+  removeListItem,
   typeForm,
   setTypeForm,
   addAchievement,
@@ -107,7 +108,10 @@ function ExpAndEduForm({
               <br />
               {dynamicInput.achievements.map(
                 (achievement, achievementIndex) => (
-                  <div key={achievementIndex}>
+                  <div
+                    key={achievementIndex}
+                    className="flex-container-achievement"
+                  >
                     <input
                       type="text"
                       value={achievement}
@@ -121,6 +125,19 @@ function ExpAndEduForm({
                         )
                       }
                     />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        removeListItem(
+                          index,
+                          achievementIndex,
+                          typeForm,
+                          setTypeForm
+                        )
+                      }
+                    >
+                      Remove
+                    </button>
                   </div>
                 )
               )}

@@ -75,6 +75,12 @@ function CVFORMAIN() {
     setInputType(updatedInputs);
   };
 
+  const removeListItem = (index, achievementIndex, inputType, setInputType) => {
+    const updatedInputs = [...inputType];
+    updatedInputs[index].achievements.splice(achievementIndex, 1);
+    setInputType(updatedInputs);
+  };
+
   // For skill and language fields, one's that can dynamically change
   const handleDynamicChange = (
     index,
@@ -123,6 +129,7 @@ function CVFORMAIN() {
         addInput={addInput}
         addAchievement={addAchievement}
         removeInput={removeInput}
+        removeListItem={removeListItem}
         handleFormChange={handleFormChange}
         handleDynamicChange={handleDynamicChange}
         handleListChanges={handleListChanges}
