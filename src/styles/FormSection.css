@@ -25,6 +25,16 @@ px only for little things like shadows, borders etc. */
   border: 1px solid;
   margin: 5px;
   background-color: #313131;
+
+  transition: filter 0.2s;
+}
+
+.form-section button:hover {
+  filter: invert(1);
+}
+
+.form-section button:active {
+  background-color: rgb(124, 124, 124);
 }
 
 .form-section .menu {
