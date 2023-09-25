@@ -11,6 +11,7 @@ function FormSection({
   handleDynamicChange,
   handleListChanges,
   handleColorChange,
+  handleDayNightChange,
   addInput,
   addAchievement,
   removeInput,
@@ -42,6 +43,9 @@ function FormSection({
         >
           Download
         </button>
+
+        <button onClick={handleDayNightChange}>Day/Night</button>
+
         <button type="button" onClick={(e) => handleColorChange(e, "RESET")}>
           Default
         </button>

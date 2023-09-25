@@ -150,6 +150,32 @@ function CVFORMAIN() {
     setFormState({ ...formState, [valueName]: value });
   }
 
+  const [dayNight, setDayNight] = useState(false);
+
+  function handleDayNightChange() {
+    const htmlBody = document.querySelector("body");
+    // const CVSection = document.querySelector("CV-section");
+    setDayNight(!dayNight);
+
+    if (dayNight === true) {
+      // this is night
+      htmlBody.classList.remove("light-color-mode");
+      htmlBody.classList.add("dark-color-mode");
+
+      // CVSection.classList.remove("CV-light-color-mode");
+      // CVSection.classList.add("CV-dark-color-mode");
+      console.log("night");
+    } else {
+      // this is day
+      htmlBody.classList.remove("dark-color-mode");
+      htmlBody.classList.add("light-color-mode");
+
+      // CVSection.classList.remove("CV-dark-color-mode");
+      // CVSection.classList.add("CV-light-color-mode");
+      console.log("day");
+    }
+  }
+
   return (
     <div className="flex-container">
       <FormSection
@@ -161,6 +187,7 @@ function CVFORMAIN() {
         handleDynamicChange={handleDynamicChange}
         handleListChanges={handleListChanges}
         handleColorChange={handleColorChange}
+        handleDayNightChange={handleDayNightChange}
         skillForm={skillForm}
         setSkillForm={setSkillForm}
         languageForm={languageForm}

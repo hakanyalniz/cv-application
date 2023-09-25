@@ -1,5 +1,6 @@
 import "../styles/CVSection.css";
 import Html from "./Html";
+import React from "react";
 
 function CVSection({
   formState,
