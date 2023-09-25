@@ -185,8 +185,11 @@ function CVFORMAIN() {
 
 export default CVFORMAIN;
 
-// Form section needs more CSS.
-// The Download button must be placed somewhere more appropriate.
+// DONE - Form section needs more CSS.
+// DONE - The Download button must be placed somewhere more appropriate.
 // DONE - More forms need to be added so they can be linked to CV.
 // DONE - A way of requesting more forms must be added to add multiple experiences, skills or language.
 // DONE - Download just as an image instead of PDF?
+
+// Make a day version
+// Create a button that switches from day to night version
