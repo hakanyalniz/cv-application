@@ -23,6 +23,14 @@ function CVSection({
           colorSet={colorSet}
         />
       </div>
+      <div className="footer">
+        <p>
+          <a href="https://github.com/hakanyalniz">
+            Hakan Yalnız{" "}
+            <img src="/public/github-mark-white.svg" alt="GitHub logo" /> GitHub
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

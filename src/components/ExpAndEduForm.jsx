@@ -38,9 +38,9 @@ function ExpAndEduForm({
     <form>
       {typeForm.map((dynamicInput, index) => (
         <div key={index}>
-          <fieldset>
+          <div className="formFieldSet">
             <div>
-              <label htmlFor={changeFieldFirst}>{firstField}</label>
+              <label>{firstField}</label>
               <br />
               <input
                 type="text"
@@ -60,7 +60,7 @@ function ExpAndEduForm({
               />
             </div>
             <div>
-              <label htmlFor={changeFieldSecond}>{secondField}</label>
+              <label>{secondField}</label>
               <br />
               <input
                 type="text"
@@ -148,7 +148,7 @@ function ExpAndEduForm({
             >
               Remove
             </button>
-          </fieldset>
+          </div>
         </div>
       ))}
     </form>

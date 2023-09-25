@@ -26,6 +26,7 @@ function FormSection({
 }) {
   return (
     <div className="form-section">
+      <div className="form-title">CV Creator</div>
       <div className="menu">
         <button
           onClick={() => {
@@ -74,35 +75,38 @@ function FormSection({
       </div>
       <hr />
       <div className="forms">
-        <Forms
-          formType={PersonalInformation(handleFormChange)}
-          legend="Personal Information"
-        />
-        <fieldset>
-          <button onClick={() => addInput("skill")}>Add Skill</button>
+        <div className="formFieldSet">
+          <Forms
+            formType={PersonalInformation(handleFormChange)}
+            legend="Personal Information"
+          />
+        </div>
+
+        <div className="formFieldSet">
           <legend>Skills</legend>
+          <button onClick={() => addInput("skill")}>Add Skill</button>
           <SkillAndLanguageForms
             typeForm={skillForm}
             setTypeForm={setSkillForm}
             handleDynamicChange={handleDynamicChange}
             removeInput={removeInput}
           />
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <button onClick={() => addInput("language")}>Add Language</button>
+        <div className="formFieldSet">
           <legend>Languages</legend>
+          <button onClick={() => addInput("language")}>Add Language</button>
           <SkillAndLanguageForms
             typeForm={languageForm}
             setTypeForm={setLanguageForm}
             handleDynamicChange={handleDynamicChange}
             removeInput={removeInput}
           />
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <button onClick={() => addInput("experience")}>Add Experience</button>
+        <div className="formFieldSet">
           <legend>Experiences</legend>
+          <button onClick={() => addInput("experience")}>Add Experience</button>
           <ExpAndEduForm
             typeForm={experienceForm}
             addAchievement={addAchievement}
@@ -112,11 +116,11 @@ function FormSection({
             removeInput={removeInput}
             removeListItem={removeListItem}
           />
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <button onClick={() => addInput("education")}>Add Education</button>
+        <div className="formFieldSet">
           <legend>Education</legend>
+          <button onClick={() => addInput("education")}>Add Education</button>
           <ExpAndEduForm
             typeForm={educationForm}
             addAchievement={addAchievement}
@@ -126,7 +130,7 @@ function FormSection({
             removeInput={removeInput}
             removeListItem={removeListItem}
           />
-        </fieldset>
+        </div>
       </div>
     </div>
   );
