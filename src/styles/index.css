@@ -17,30 +17,35 @@
   -webkit-text-size-adjust: 100%;
 }
 
-/* Day/night switch tests, doesn't completely work */
+/* Day/night switch, adds the classes to HTML body*/
 .dark-color-mode {
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
 
-/* .CV-dark-color-mode {
-  color-scheme: dark;
-  color: black;
-  background-color: #313131;
-} */
-
 .light-color-mode {
   color-scheme: light;
   color: rgba(51, 51, 51, 0.87);
-  background-color: #f1f1f1;
+  background-color: #e2e2e2;
 }
 
-/* .CV-light-color-mode {
-  color-scheme: light;
-  color: rgba(51, 51, 51, 0.87);
-  background-color: #757575;
-} */
+.light-color-mode button {
+  color: white;
+}
+
+.light-color-mode .footer p {
+  color: black;
+}
+
+.light-color-mode .footer img {
+  filter: invert(1);
+}
+
+.light-color-mode .formFieldSet {
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+}
 
 * {
   box-sizing: border-box;
