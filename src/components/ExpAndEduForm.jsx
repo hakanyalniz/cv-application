@@ -1,7 +1,6 @@
 function ExpAndEduForm({
   handleDynamicChange,
   handleListChanges,
-  handleAchievementChange,
   removeInput,
   removeListItem,
   typeForm,

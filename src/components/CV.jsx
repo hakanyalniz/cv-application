@@ -2,7 +2,6 @@ import "../styles/CV.css";
 
 function CV({
   formState,
-  dynamicForm,
   skillForm,
   languageForm,
   experienceForm,
