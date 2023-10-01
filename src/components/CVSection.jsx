@@ -27,8 +27,8 @@ function CVSection({
       <div className="footer">
         <p>
           <a href="https://github.com/hakanyalniz">
-            Hakan Yalnız{" "}
-            <img src="/public/github-mark-white.svg" alt="GitHub logo" /> GitHub
+            Hakan Yalnız <img src="/github-mark-white.svg" alt="GitHub logo" />{" "}
+            GitHub
           </a>
         </p>
       </div>

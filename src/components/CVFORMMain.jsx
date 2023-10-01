@@ -55,7 +55,7 @@ function CVFORMAIN() {
       id: "experience",
       position: "Position",
       company: "Company",
-      date: "Date",
+      date: "2023-01-01",
       achievements: [""],
     },
   ]);
@@ -71,7 +71,7 @@ function CVFORMAIN() {
       id: "education",
       field: "Field",
       location: "Location",
-      date: "Date",
+      date: "2023-01-01",
       achievements: [""],
     },
   ]);
@@ -109,7 +109,7 @@ function CVFORMAIN() {
           id: "experience",
           position: "Position",
           company: "Company",
-          date: "Date",
+          date: "2023-01-01",
           achievements: [""],
         },
       ]);
@@ -120,7 +120,7 @@ function CVFORMAIN() {
           id: "education",
           field: "Field",
           location: "Location",
-          date: "Date",
+          date: "2023-01-01",
           achievements: [""],
         },
       ]);

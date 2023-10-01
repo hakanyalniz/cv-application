@@ -2,8 +2,8 @@ function Forms({ formType, legend }) {
   return (
     <form>
       <legend>{legend}</legend>
-      {formType.map((inputElement) => {
-        return inputElement;
+      {formType.map((inputElement, index) => {
+        return <div key={index}>{inputElement}</div>;
       })}
     </form>
   );

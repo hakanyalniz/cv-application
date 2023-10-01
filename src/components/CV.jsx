@@ -44,12 +44,12 @@ function CV({
           </div>
           {skillForm.map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <div>{input.name}</div>
                 <div className={`skill-bar-1 bar-level-${input.level}`}>
                   <span className="bar-1"></span>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -62,12 +62,12 @@ function CV({
           </div>
           {languageForm.map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <div>{input.name}</div>
                 <div className={`skill-bar-1 bar-level-${input.level}`}>
                   <span className="bar-1"></span>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -90,20 +90,20 @@ function CV({
           </div>
           {experienceForm.map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <div className="experience-grid">
                   <div className="experience-date">{input.date}</div>
                   <div className="experience-details">
                     <div className="title">{input.position}</div>
                     <div className="title-location">{input.company}</div>
                     <ul>
-                      {input.achievements.map((listItem) => {
-                        return <li>{listItem}</li>;
+                      {input.achievements.map((listItem, index) => {
+                        return <li key={index}>{listItem}</li>;
                       })}
                     </ul>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
@@ -119,20 +119,20 @@ function CV({
           </div>
           {educationForm.map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <div className="education-grid">
                   <div className="education-date">{input.date}</div>
                   <div className="education-details">
                     <div className="title">{input.field}</div>
                     <div className="title-location">{input.location}</div>
                     <ul>
-                      {input.achievements.map((listItem) => {
-                        return <li>{listItem}</li>;
+                      {input.achievements.map((listItem, index) => {
+                        return <li key={index}>{listItem}</li>;
                       })}
                     </ul>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

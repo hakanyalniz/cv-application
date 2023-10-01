@@ -1,6 +1,6 @@
 export function PersonalInformation(handleFormChange) {
   const PersonalInformation = [
-    <div>
+    <>
       <label htmlFor="firstName">First name</label>
       <br />
       <input
@@ -9,8 +9,8 @@ export function PersonalInformation(handleFormChange) {
         name="firstName"
         onChange={handleFormChange}
       />
-    </div>,
-    <div>
+    </>,
+    <>
       <label htmlFor="lastName">Last name</label>
       <br />
       <input
@@ -19,13 +19,13 @@ export function PersonalInformation(handleFormChange) {
         name="lastName"
         onChange={handleFormChange}
       />
-    </div>,
-    <div>
+    </>,
+    <>
       <label htmlFor="email">E-mail</label>
       <br />
       <input type="email" id="email" name="email" onChange={handleFormChange} />
-    </div>,
-    <div>
+    </>,
+    <>
       <label htmlFor="phoneNumber">Phone Number</label>
       <br />
       <input
@@ -34,8 +34,8 @@ export function PersonalInformation(handleFormChange) {
         name="phoneNumber"
         onChange={handleFormChange}
       />
-    </div>,
-    <div>
+    </>,
+    <>
       <label htmlFor="cvIntroduction">Introduction</label>
       <br />
       <textarea
@@ -45,7 +45,7 @@ export function PersonalInformation(handleFormChange) {
         cols="55"
         onChange={handleFormChange}
       ></textarea>
-    </div>,
+    </>,
   ];
 
   return PersonalInformation;
